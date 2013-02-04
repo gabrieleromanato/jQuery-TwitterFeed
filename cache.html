@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery: TwitterFeed plugin: Cache usage</title>
+<meta charset="utf-8" />
+<style type="text/css">
+#tweets {
+	width: 600px;
+	font: 85% Arial, sans-serif;
+	color: #444;
+	margin: 2em auto;
+	position: relative;
+	background: url(http://gabrieleromanato.com/wp-content/uploads/2011/08/twitterbird.png) no-repeat 0 0;
+	padding-left: 50px;
+	padding-bottom: 20px;
+}
+
+#tweets-wrapper {
+
+   padding: 10px;
+}
+
+#tweets-wrapper div.tweet {
+   margin-bottom: 1em;
+}
+
+#tweets-wrapper div.tweet a {
+	color: #d34545;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="tweets"></div>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.twitterfeed.js"></script>
+
+<script type="text/javascript">
+$(function() {
+
+  $('#tweets').twitterFeed({
+  	cache: true
+  });
+
+});
+</script>
+
+</body>
+</html>
