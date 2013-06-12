@@ -1,0 +1,7 @@
+UPDATE
+
+TwitterFeed has been updated to work with the Twitter's API v. 1.1. Now you have to:
+
+1) open the twitterfeed/TwitterFeed.php class and fill in your consumer key, consumer secret, access token and access token secret.
+2) set the proper path / URL to the main twitterfeed.php file in the jQuery's plugin options
+3) set your Twitter's username and the number of tweets you want to retrieve in the twitterfeed.php file.

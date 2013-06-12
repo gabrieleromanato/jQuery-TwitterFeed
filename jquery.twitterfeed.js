@@ -5,8 +5,7 @@
     Usage $(element).twitterFeed(options);
 
     Options:
-      username: Your Twitter username
-      limit: The number of tweets you want to retrieve 
+      url: Path to the main twitterfeed.php file
       cache: true|false If true, your tweets will be cached for 1 hour
 */
 
@@ -98,15 +97,14 @@
 	$.fn.twitterFeed = function(options) {
 		var that = this;
 		var settings = {
-			username: 'gabromanato',
-			limit: 5,
+			url: 'twitterfeed.php',
 			cache: false
 			
 		};
 		options = $.extend(settings, options);
 		var TwitterFeed = new
 		function() {
-			var url = 'http://api.twitter.com/1/statuses/user_timeline.json?screen_name=' + options.username + '&count=' + options.limit + '&callback=?';
+			var url = options.url;
 			var relativeTime = function(time_value) {
 				var values = time_value.split(" ");
 				time_value = values[1] + " " + values[2] + ", " + values[5] + " " + values[3];
