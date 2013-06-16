@@ -150,7 +150,7 @@
 			};
 			var replaceURLs = function(text) {
 				var replaced = text.replace(/((ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?)/gi, '<a href="$1">$1</a>').
-				replace(/(^|\s)#(\w+)/g, '$1<a href="http://search.twitter.com/search?q=%23$2">#$2</a>').
+				replace(/(^|\s)#(\w+)/g, '$1<a href="http://twitter.com/search?q=%23$2&src=hash">#$2</a>').
 				replace(/(^|\s)@(\w+)/g, '$1<a href="http://twitter.com/$2">@$2</a>');
 				return replaced;
 				
