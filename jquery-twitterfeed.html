@@ -7,25 +7,37 @@
 #tweets {
 	width: 600px;
 	font: 85% Arial, sans-serif;
-	color: #444;
 	margin: 2em auto;
-	position: relative;
-	background: url(http://gabrieleromanato.com/wp-content/uploads/2011/08/twitterbird.png) no-repeat 0 0;
-	padding-left: 50px;
-	padding-bottom: 20px;
 }
 
 #tweets-wrapper {
-
-   padding: 10px;
+	padding-left: 60px;
+	background: url(https://twitter.com/images/resources/twitter-bird-blue-on-white.png) no-repeat 0 50%;
+	background-size: 60px 60px;
 }
 
 #tweets-wrapper div.tweet {
    margin-bottom: 1em;
+   border-radius: 4px;
+   color: #333;
+   padding: 8px;
+   border: 1px solid #ddd;
+   line-height: 1.3;
 }
 
 #tweets-wrapper div.tweet a {
-	color: #d34545;
+	color: #08c;
+}
+
+#tweets-wrapper div.tweet-actions {
+	margin: 1em 0;
+	padding-top: 0.3em;
+	border-top: 1px solid #ddd;
+}
+
+#tweets-wrapper div.tweet-actions a {
+	font-size: 95%;
+	margin-right: 0.5em;
 }
 
 </style>
@@ -35,7 +47,7 @@
 
 <div id="tweets"></div>
 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
 <script type="text/javascript" src="jquery.twitterfeed.js"></script>
 
 <script type="text/javascript">

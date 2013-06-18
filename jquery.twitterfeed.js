@@ -150,8 +150,8 @@
 			};
 			var replaceURLs = function(text) {
 				var replaced = text.replace(/((ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?)/gi, '<a href="$1">$1</a>').
-				replace(/(^|\s)#(\w+)/g, '$1<a href="http://twitter.com/search?q=%23$2&src=hash">#$2</a>').
-				replace(/(^|\s)@(\w+)/g, '$1<a href="http://twitter.com/$2">@$2</a>');
+				replace(/(^|\s)#(\w+)/g, '$1<a href="https://twitter.com/search?q=%23$2&src=hash">#$2</a>').
+				replace(/(^|\s)@(\w+)/g, '$1<a href="https://twitter.com/$2">@$2</a>');
 				return replaced;
 				
 			};
@@ -164,10 +164,17 @@
 						function(i, item) {
 							var tweet = replaceURLs(item.text);
 							var time = relativeTime(item.created_at);
+							var id = item.id_str;
 							html += '<div class="tweet">';
 							html += tweet;
 							html += '<small>' + time + '</small>';
+							html += '<div class="tweet-actions">';
+							html += '<a class="tweet-reply" href="https://twitter.com/intent/tweet?in_reply_to=' + id + '" target="_blank">Reply</a>';
+							html += '<a class="tweet-retweet" href="https://twitter.com/intent/retweet?tweet_id=' + id + '" target="_blank">Retweet</a>';
+							html += '<a class="tweet-favorite" href="https://twitter.com/intent/favorite?tweet_id=' + id + '" target="_blank">Favorite</a>';
 							html += '</div>';
+							html += '</div>';
+							
 							
 						});
 						html += '</div>';
@@ -188,10 +195,17 @@
 							function(i, item) {
 								var tweet = replaceURLs(item.text);
 								var time = relativeTime(item.created_at);
+								var id = item.id_str;
 								html += '<div class="tweet">';
 								html += tweet;
 								html += '<small>' + time + '</small>';
+								html += '<div class="tweet-actions">';
+								html += '<a class="tweet-reply" href="https://twitter.com/intent/tweet?in_reply_to=' + id + '" target="_blank">Reply</a>';
+								html += '<a class="tweet-retweet" href="https://twitter.com/intent/retweet?tweet_id=' + id + '" target="_blank">Retweet</a>';
+								html += '<a class="tweet-favorite" href="https://twitter.com/intent/favorite?tweet_id=' + id + '" target="_blank">Favorite</a>';
 								html += '</div>';
+								html += '</div>';
+								
 								
 							});
 							html += '</div>';
